@@ -1,22 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Tetris</title>
     <style>
-        canvas {
-            display: block;
-            margin: 3em auto;
-            background-color: #222;
-        }
-        body{
-            background-color: black;
-        }
+/* Sleeker dark color scheme in CSS variables */
+:root {
+    --primary-color: #007681;
+    --accent-orange: rgb(231, 131, 0);
+    --secondary-color: #2c2c2c;
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --card-background: #292929;
+    --card-border-color: #3c3c3c;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .Title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .TitleContainer h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .Controls {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Controls p {
+    font-size: 14px;
+    margin: 5px;
+  }
+  b{
+    color: var(--accent-orange);
+}
+  canvas {
+    border: 1px solid var(--primary-color);
+    margin-bottom: 20em;
+
+  }
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid var(--card-border-color);
+  }
+  
+  .info p {
+    margin: 0;
+  }
+  
+  .socials a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 15px;
+  }
+  
+  .socials a:hover {
+    color: var(--accent-orange);
+    text-decoration: underline;
+  }
+  
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="Title">
+      <div class="TitleContainer">
+          <h1>Controls</h1>
+          <div class="Controls">
+            <p><b>Shift:</b> Hold Piece</p>
+            <p><b>Space:</b> Quick Drop</p>
+            <p><b>Down key:</b> Fast Drop</p>
+            <p><b>Arrow Keys</b> to move</p>
+          </div>
+      </div>
+    </div>
+
     <canvas id="gameCanvas" width="320" height="640"></canvas>
+      <div class="bottom-bar">
+    <div class="info">
+      <p>Jorge Saxon &copy; 2023</p>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/jorgesaxon" target="_blank">Facebook</a>
+      <a href="https://www.twitter.com/jorgesaxon" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/in/jorgesaxon" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/jorgesaxon" target="_blank">Instagram</a>
+    </div>
+  </div>
     <script src="tetris.js"></script>
-</body>
+  </body>
 </html>
